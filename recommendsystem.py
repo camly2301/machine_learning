@@ -20,9 +20,9 @@ movies = {
 
 # Hàm tính toán độ tương đồng cosine giữa hai phim
 def cosine_similarity(movie1, movie2):
-    numerator = np.dot(movie1, movie2)
-    denominator = np.linalg.norm(movie1) * np.linalg.norm(movie2)
-    return numerator / denominator if denominator != 0 else 0
+    numerator = np.dot(movie1, movie2)  # Tính tích vô hướng giữa hai vectơ đặc trưng
+    denominator = np.linalg.norm(movie1) * np.linalg.norm(movie2)  # Tính tích của độ dài hai vectơ đặc trưng
+    return numerator / denominator if denominator != 0 else 0  # Trả về độ tương đồng cosine nếu mẫu khác 0, ngược lại trả về 0
 
 # Hàm khuyến nghị dựa trên Content-based Filtering
 def content_based_recommendation(movie, num_recommendations):
